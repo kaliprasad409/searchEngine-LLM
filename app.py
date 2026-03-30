@@ -44,7 +44,7 @@ if prompt := st.chat_input(placeholder="What is machine learning?"):
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
 
-    llm = ChatGroq(groq_api_key=api_key, model_name="Llama3-8b-8192", streaming=True)
+    llm = ChatGroq(groq_api_key=api_key, model_name="llama-3.1-8b-instant", streaming=True)
 
     # Build tool names and descriptions for the ReAct prompt
     tool_names = ", ".join([t.name for t in tools])
